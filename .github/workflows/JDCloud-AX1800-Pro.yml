@@ -37,7 +37,7 @@ env:
   REPO_URL: https://github.com/JiaY-shi/openwrt
   REPO_BRANCH: ipq60xx-devel_nss
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: JDCloud-AX1800-Pro/ax1800.config
+  CONFIG_FILE: JDCloud-AX1800-Pro/.config
   DIY_P1_SH: JDCloud-AX1800-Pro/diy-part1.sh
   DIY_P2_SH: JDCloud-AX1800-Pro/diy-part2.sh
   SSH_ACTIONS: false
