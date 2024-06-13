@@ -64,7 +64,7 @@ jobs:
         cp -r RAX3000M-eMMC_XR30-eMMC/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch openwrt/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch
         cd openwrt/target/linux/qualcommax/files/arch/arm64/boot/dts/qcom
         rm -rf ipq6000-ax1800-pro.dts
-        cp -r RAX3000M-eMMC_XR30-eMMC/ipq6000-ax1800-pro.dts
+        wget RAX3000M-eMMC_XR30-eMMC/ipq6000-ax1800-pro.dts
         cd openwrt
         git apply 0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch
         $GITHUB_WORKSPACE/$DIY_P1_SH
