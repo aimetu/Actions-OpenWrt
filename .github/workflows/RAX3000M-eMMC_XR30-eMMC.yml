@@ -61,11 +61,11 @@ jobs:
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
-        cp RAX3000M-eMMC_XR30-eMMC/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch openwrt/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch
+        cp -r RAX3000M-eMMC_XR30-eMMC/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch openwrt/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch
         cd openwrt
         git apply 0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch
         rm -rf target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/ipq6000-ax1800-pro.dts
-        cp RAX3000M-eMMC_XR30-eMMC/ipq6000-ax1800-pro.dts target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/ipq6000-ax1800-pro.dts
+        cp -r RAX3000M-eMMC_XR30-eMMC/ipq6000-ax1800-pro.dts target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/ipq6000-ax1800-pro.dts
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
