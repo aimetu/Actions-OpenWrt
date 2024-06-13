@@ -66,7 +66,7 @@ jobs:
         git apply 0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch
         cd target/linux/qualcommax
         rm -rf files/arch/arm64/boot/dts/qcom/ipq6000-ax1800-pro.dts
-        cp RAX3000M-eMMC_XR30-eMMC/ipq6000-ax1800-pro.dts files/arch/arm64/boot/dts/qcom
+        cp RAX3000M-eMMC_XR30-eMMC/ipq6000-ax1800-pro.dts files/arch/arm64/boot/dts/qcom/ipq6000-ax1800-pro.dts
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
