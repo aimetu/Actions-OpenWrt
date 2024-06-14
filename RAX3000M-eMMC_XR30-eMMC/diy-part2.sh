@@ -33,6 +33,3 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci
 rm -rf feeds/packages/net/adguardhome
 # git clone https://github.com/kongfl888/luci-app-adguardhome package/new/luci-app-adguardhome
 # git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/new/luci-app-adguardhome
-
-# rm -rf target/target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/ipq6000-ax1800-pro.dts
-cp -f RAX3000M-eMMC_XR30-eMMC/ipq6000-ax1800-pro.dts target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/ipq6000-ax1800-pro.dts
