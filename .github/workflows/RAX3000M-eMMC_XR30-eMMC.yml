@@ -19,10 +19,10 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  FEEDS_CONF: RAX3000M-eMMC_XR30-eMMC/feeds.conf.default
-  CONFIG_FILE: RAX3000M-eMMC_XR30-eMMC/ax1800.config
-  DIY_P1_SH: RAX3000M-eMMC_XR30-eMMC/diy-part1.sh
-  DIY_P2_SH: RAX3000M-eMMC_XR30-eMMC/diy-part2.sh
+  FEEDS_CONF: lede-ax1800/feeds.conf.default
+  CONFIG_FILE: lede-ax1800/ax1800.config
+  DIY_P1_SH: lede-ax1800/diy-part1.sh
+  DIY_P2_SH: lede-ax1800/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -61,9 +61,12 @@ jobs:
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
-        cp -r RAX3000M-eMMC_XR30-eMMC/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch openwrt/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch
+        cp -r lede-ax1800/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch openwrt/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch
         cd openwrt
         git apply 0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch
+        cd target/linux/qualcommax/files/arch/arm64/boot/dts/qcom
+        rm -rf ipq6000-ax1800-pro.dts
+        curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/RAX3000M-eMMC_XR30-eMMC/ipq6000-ax1800-pro.dts
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
