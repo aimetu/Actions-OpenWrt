@@ -41,3 +41,7 @@ chmod +x /tmp/clash >/dev/null 2>&1
 mkdir -p package/kenzo/luci-app-openclash/root/etc/openclash/core
 mv /tmp/clash package/kenzo/luci-app-openclash/root/etc/openclash/core/clash >/dev/null 2>&1
 rm -rf /tmp/clash.tar.gz >/dev/null 2>&1
+
+#rm -rf feeds/packages/utils/v2dat
+#rm -rf feeds/packages/lang/golang
+#git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
