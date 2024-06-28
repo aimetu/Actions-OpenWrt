@@ -19,8 +19,8 @@ sed -i 's/192.168.1.1/192.168.188.1/g' package/base-files/files/bin/config_gener
 # 修改 wifi 无线名称
 sed -i "s/LibWrt/OpenWrt/g" package/network/config/wifi-scripts/files/lib/wifi/mac80211.sh
 
-# 更换 5.4 内核为 5.10 内核
-# sed -i "s/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g" target/linux/ramips/Makefile
+# 更换 6.6 内核为 6.1 内核
+sed -i "s/KERNEL_PATCHVER:=6.6/KERNEL_PATCHVER:=6.1/g" target/linux/qualcommax/Makefile
 
 # 取消 bootstrap 为默认主题，将 argon 设置为默认主题
 rm -rf feeds/luci/themes/luci-theme-argon
