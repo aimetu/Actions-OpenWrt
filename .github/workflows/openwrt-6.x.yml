@@ -9,10 +9,6 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-# cp -r lede-ax1800/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch openwrt/0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch
-# git apply 0001-ipq60xx-add-support-for-JD-Cloud-AX1800-Pro.patch
-# curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/lede-ax1800/ipq6000-ax1800-pro.dts 
-# cp -f ipq6000-ax1800-pro.dts target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/
 
 name: openwrt-6.x
 
@@ -21,8 +17,8 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/King-Of-Knights/openwrt-6.x.git
+  REPO_BRANCH: main
   FEEDS_CONF: openwrt-6.x/feeds.conf.default
   CONFIG_FILE: openwrt-6.x/6.x.config
   DIY_P1_SH: openwrt-6.x/diy-part1.sh
@@ -68,20 +64,18 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
-    - name: Update feeds & Install feeds
-      run: |
-        cp openwrt-6.x/jdcloud-ax1800-pro.patch openwrt/jdcloud-ax1800-pro.patch
-        cd openwrt
-        git apply jdcloud-ax1800-pro.patch
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-        
+    - name: Update feeds
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
+
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
-        cd openwrt       
+        cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Download package
