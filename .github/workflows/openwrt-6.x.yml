@@ -61,6 +61,8 @@ jobs:
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
+        rm -rf openwrt/feeds/packages/lang/ruby/Makefile
+        cp -r openwrt-6.x/Makefile openwrt/feeds/packages/lang/ruby/
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
