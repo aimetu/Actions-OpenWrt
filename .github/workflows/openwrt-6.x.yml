@@ -65,7 +65,11 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+      run: |
+        cd openwrt && ./scripts/feeds update -a
+        cd feeds/packages/lang/ruby
+        rm -rf Makefile
+        curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/openwrt-6.x/Makefile
 
     - name: Install feeds
       run:  cd openwrt && ./scripts/feeds install -a
@@ -77,9 +81,6 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        cd feeds/packages/lang/ruby
-        rm -rf Makefile
-        curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/openwrt-6.x/Makefile
         
     - name: Download package
       id: package
