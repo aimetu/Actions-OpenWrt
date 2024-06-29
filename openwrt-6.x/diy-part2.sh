@@ -36,5 +36,5 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/new/
 
 # 添加 mosdns 广告过滤插件，删除自带 mosdns 文件
 rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-mosdns
-git clone https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
+# rm -rf feeds/luci/applications/luci-app-mosdns
+git clone https://github.com/sbwml/luci-app-mosdns.git package/new/luci-app-mosdns
