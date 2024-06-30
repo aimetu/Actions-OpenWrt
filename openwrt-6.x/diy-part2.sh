@@ -30,13 +30,13 @@ sed -i "s/LiBwrt/OpenWrt/g" package/network/config/wifi-scripts/files/lib/wifi/m
 # sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
 
 # 添加 AdguardHome 广告过滤插件，删除自带 AdguardHome 文件
-rm -rf feeds/packages/net/adguardhome
+# rm -rf feeds/packages/net/adguardhome
 # git clone https://github.com/kongfl888/luci-app-adguardhome package/new/luci-app-adguardhome
-git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/new/luci-app-adguardhome
+# git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/new/luci-app-adguardhome
 
 # 添加 mosdns 广告过滤插件，删除自带 mosdns 文件
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/packages/net/v2ray-geodata
+# rm -rf feeds/packages/net/mosdns
+# rm -rf feeds/packages/net/v2ray-geodata
 # rm -rf feeds/luci/applications/luci-app-mosdns
-git clone https://github.com/sbwml/luci-app-mosdns.git package/new/luci-app-mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
+# git clone https://github.com/sbwml/luci-app-mosdns.git package/new/luci-app-mosdns
+# git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
