@@ -14,7 +14,7 @@
 sed -i "s/LibWrt/OpenWrt/g" package/base-files/files/bin/config_generate
 
 # 默认网关 ip 地址修改
-sed -i 's/192.168.1.1/192.168.188.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.68.1/g' package/base-files/files/bin/config_generate
 
 # 修改 wifi 无线名称
 sed -i "s/LiBwrt/OpenWrt/g" package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
