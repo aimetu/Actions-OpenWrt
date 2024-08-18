@@ -36,7 +36,7 @@ rm -rf feeds/packages/net/adguardhome
 
 # 插件 mosdns & alist 依赖，删除重复 golang & v2ray 防止插件冲突
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # rm -rf feeds/packages/net/v2ray-geodata
 # git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
