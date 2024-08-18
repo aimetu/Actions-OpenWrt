@@ -14,7 +14,7 @@
 # curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/lede-ax1800/ipq6000-ax1800-pro.dts 
 # cp -f ipq6000-ax1800-pro.dts target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/
 
-name: lede-ax1800
+name: lede-ax1800-full
 
 on:
   repository_dispatch:
