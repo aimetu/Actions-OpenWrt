@@ -14,21 +14,21 @@
 #        cd openwrt && ./scripts/feeds update -a
 #        cd feeds/packages/lang/ruby
 #        rm -rf Makefile
-#        curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/ImmortalWrt/Makefile
+#        curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/immortalwrt/Makefile
 
-name: ImmortalWrt ax1800
+name: immortalwrt ax1800
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/VIKINGYFY/immortalwrt.git
+  REPO_URL: https://github.com/immortalwrt/immortalwrt.git
   REPO_BRANCH: main
-  FEEDS_CONF: ImmortalWrt/feeds.conf.default
-  CONFIG_FILE: ImmortalWrt/ax1800.config
-  DIY_P1_SH: ImmortalWrt/diy-part1.sh
-  DIY_P2_SH: ImmortalWrt/diy-part2.sh
+  FEEDS_CONF: immortalwrt/feeds.conf.default
+  CONFIG_FILE: immortalwrt/ax1800.config
+  DIY_P1_SH: immortalwrt/diy-part1.sh
+  DIY_P2_SH: immortalwrt/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -75,7 +75,7 @@ jobs:
         cd openwrt && ./scripts/feeds update -a
         cd feeds/packages/lang/ruby
         rm -rf Makefile
-        curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/ImmortalWrt/Makefile
+        curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/immortalwrt/Makefile
 
     - name: Install feeds
       run:  cd openwrt && ./scripts/feeds install -a
