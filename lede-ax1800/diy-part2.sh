@@ -22,10 +22,9 @@ sed -i 's/192.168.1.1/192.168.188.1/g' package/base-files/files/bin/config_gener
 # 更换 5.4 内核为 5.10 内核
 # sed -i "s/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g" target/linux/qualcommax/Makefile
 
-# 取消 bootstrap 为默认主题，将 argon 设置为默认主题 ( for LuCI 18.06 )
+# 取消 bootstrap 为默认主题，将 argon 设置为默认主题 ( for LuCI 18.06 & 23.05 )
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-# 主题 for LuCI 23.05
 # git clone  https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 
 sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
