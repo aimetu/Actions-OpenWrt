@@ -14,7 +14,7 @@
 # curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/lede-ax1800/ipq6000-ax1800-pro.dts 
 # cp -f ipq6000-ax1800-pro.dts target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/
 
-name: lede-ax1800-full
+name: lede-ax1800-full-23.05
 
 on:
   repository_dispatch:
@@ -23,7 +23,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  FEEDS_CONF: lede-ax1800/full.conf.default
+  FEEDS_CONF: lede-ax1800/full-23.05.conf.default
   CONFIG_FILE: lede-ax1800/full-23.05.config.config
   DIY_P1_SH: lede-ax1800/diy-part1.sh
   DIY_P2_SH: lede-ax1800/diy-part2.sh
