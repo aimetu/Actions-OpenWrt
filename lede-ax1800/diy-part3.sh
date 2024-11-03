@@ -43,7 +43,8 @@ sed -i "s/PKG_MIRROR_HASH/#PKG_MIRROR_HASH/" feeds/packages/net/smartdns/Makefil
 
 # 安装 luci-app-smartdns（ 必选 )
 rm -rf feeds/luci/applications/luci-app-smartdns
-git clone -b lede https://github.com/pymumu/luci-app-smartdns.git feeds/luci/applications/luci-app-smartdns
+# git clone -b lede https://github.com/pymumu/luci-app-smartdns.git feeds/luci/applications/luci-app-smartdns
+git clone https://github.com/pymumu/luci-app-smartdns.git feeds/luci/applications/luci-app-smartdns
 # git clone https://github.com/pymumu/smartdns.git package/smartdns
 
 # 插件 mosdns & alist 依赖，删除重复 golang & v2ray 防止插件冲突
