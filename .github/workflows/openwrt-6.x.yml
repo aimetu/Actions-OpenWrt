@@ -24,7 +24,7 @@ on:
 
 env:
   REPO_URL: https://github.com/LiBwrt-op/openwrt-6.x.git
-  REPO_BRANCH: main
+  REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: openwrt-6.x/feeds.conf.default
   CONFIG_FILE: openwrt-6.x/6.x.config
   DIY_P1_SH: openwrt-6.x/diy-part1.sh
