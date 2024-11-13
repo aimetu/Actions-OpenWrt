@@ -19,6 +19,9 @@ sed -i 's/192.168.1.1/192.168.188.1/g' package/base-files/files/bin/config_gener
 # 修改 wifi 无线名称
 sed -i "s/LiBwrt/OpenWrt/g" package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 
+# 修改 wifi 默认打开
+# sed -i "s/disabled='${defaults ? 0 : 1}'/disabled='0'/g" package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
+
 # 更换 6.6 内核为 6.1 内核
 # sed -i "s/KERNEL_PATCHVER:=6.6/KERNEL_PATCHVER:=6.1/g" target/linux/qualcommax/Makefile
 
