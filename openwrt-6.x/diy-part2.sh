@@ -45,3 +45,7 @@ rm -rf feeds/packages/net/adguardhome
 # rm -rf feeds/packages/net/v2ray-geodata
 # git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 # git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+
+# 添加 nekobox & mihomo 插件
+# git clone https://github.com/Thaolga/openwrt-nekobox  package/openwrt-nekobox
+# git clone https://github.com/morytyann/OpenWrt-mihomo   package/openwrt-mihomo
