@@ -16,7 +16,7 @@
 #        rm -rf Makefile
 #        curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/openwrt-6.x/Makefile
 
-name: openwrt-6.full
+name: openwrt-6.small
 
 on:
   repository_dispatch:
@@ -25,8 +25,8 @@ on:
 env:
   REPO_URL: https://github.com/LiBwrt-op/openwrt-6.x.git
   REPO_BRANCH: openwrt-24.10
-  FEEDS_CONF: openwrt-6.x/full.conf.default
-  CONFIG_FILE: openwrt-6.x/6.full.config
+  FEEDS_CONF: openwrt-6.x/small.conf.default
+  CONFIG_FILE: openwrt-6.x/small.config
   DIY_P1_SH: openwrt-6.x/diy-part1.sh
   DIY_P2_SH: openwrt-6.x/diy-part2.sh
   UPLOAD_BIN_DIR: false
