@@ -16,7 +16,7 @@
 #        rm -rf Makefile
 #        curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/openwrt-6.x/Makefile
 
-name: openwrt-6.x.default
+name: openwrt-6.default
 
 on:
   repository_dispatch:
