@@ -26,7 +26,7 @@ env:
   REPO_URL: https://github.com/King-Of-Knights/openwrt-6.x.git
   REPO_BRANCH: main
   FEEDS_CONF: King/small.conf.default
-  CONFIG_FILE: King/small.default.config
+  CONFIG_FILE: King/.config
   DIY_P1_SH: King/diy-part1.sh
   DIY_P2_SH: King/diy-part2.sh
   UPLOAD_BIN_DIR: false
