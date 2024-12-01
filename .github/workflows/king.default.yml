@@ -8,13 +8,6 @@
 #
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
-#
-#    - name: Update feeds
-#      run: |
-#        cd openwrt && ./scripts/feeds update -a
-#        cd feeds/packages/lang/ruby
-#        rm -rf Makefile
-#        curl -LJO https://github.com/aimetu/Actions-OpenWrt/raw/main/openwrt-6.x/Makefile
 
 name: king.default
 
@@ -128,7 +121,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: king_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
     - name: Generate release tag
