@@ -9,7 +9,7 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 
-name: King.small
+name: king.small
 
 on:
   repository_dispatch:
