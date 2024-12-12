@@ -42,8 +42,6 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # 添加 mosdns 插件，删除重复 mosdns 文件
-find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
-find ./ | grep Makefile | grep mosdns | xargs rm -f
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/v2ray-geodata
 rm -rf feeds/luci/applications/luci-app-mosdns
