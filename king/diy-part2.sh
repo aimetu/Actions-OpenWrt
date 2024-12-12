@@ -37,16 +37,27 @@ rm -rf feeds/packages/net/adguardhome
 # git clone https://github.com/kongfl888/luci-app-adguardhome package/new/luci-app-adguardhome
 # git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/new/luci-app-adguardhome
 
-# 插件 mosdns & alist 依赖，删除重复 golang & v2ray 防止插件冲突 
-# rm -rf feeds/packages/lang/golang
-# git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+# 更新 golang 依赖（ mosdns & alist 插件 )
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
+# 添加 mosdns 插件，删除重复 mosdns 文件
 rm -rf feeds/packages/net/mosdns
-# rm -rf feeds/luci/applications/luci-app-mosdns
-# rm -rf feeds/packages/net/v2ray-geodata
-# git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-# git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+rm -rf feeds/packages/net/v2ray-geodata
+rm -rf feeds/luci/applications/luci-app-mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
-# 添加 nekobox & mihomo 插件
-# git clone https://github.com/Thaolga/openwrt-nekobox  package/openwrt-nekobox
-# git clone https://github.com/morytyann/OpenWrt-mihomo   package/openwrt-mihomo
+# 添加 smartdns 插件
+# git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
+# git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
+
+# 添加 nekobox 插件
+# git clone https://github.com/Thaolga/openwrt-nekobox package/openwrt-nekobox
+
+# 添加 mihomo 插件
+# git clone --depth=1 https://github.com/morytyann/OpenWrt-mihomo.git -b main package/luci-app-mihomo
+
+# 添加 OpenClash 插件
+# rm -rf feeds/luci/applications/luci-app-openclash
+# git clone --depth=1 https://github.com/vernesong/OpenClash.git -b dev package/luci-app-openclash
