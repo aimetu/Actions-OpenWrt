@@ -28,6 +28,9 @@ sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package
 # 更换 6.6 内核为 6.1 内核
 # sed -i "s/KERNEL_PATCHVER:=6.6/KERNEL_PATCHVER:=6.1/g" target/linux/qualcommax/Makefile
 
+# samba 解除 root 限制
+# sed -i 's/invalid users = root/#&/g' feeds/packages/net/samba4/files/smb.conf.template
+
 # 修正连接数
 # sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=165535' package/base-files/files/etc/sysctl.conf
 
@@ -55,8 +58,10 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
 # 添加 smartdns 插件
-# git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
-# git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
+# rm -rf feeds/packages/net/smartdns
+# rm -rf feeds/luci/applications/luci-app-smartdns
+# git clone --depth=1 -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
+# git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
 
 # 添加 nekobox 插件
 # git clone https://github.com/Thaolga/openwrt-nekobox package/openwrt-nekobox
