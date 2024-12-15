@@ -22,6 +22,9 @@ sed -i 's/192.168.1.1/10.10.10.1/g' package/base-files/files/bin/config_generate
 # 更换 5.4 内核为 5.10 内核
 # sed -i "s/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g" target/linux/qualcommax/Makefile
 
+# samba 解除 root 限制
+# sed -i 's/invalid users = root/#&/g' feeds/packages/net/samba4/files/smb.conf.template
+
 # 取消 bootstrap 为默认主题，将 argon 设置为默认主题 ( for LuCI 18.06 & 23.05 )
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
