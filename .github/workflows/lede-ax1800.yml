@@ -20,7 +20,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: lede-ax1800/feeds.conf.default
-  CONFIG_FILE: lede-ax1800/ax1800.config
+  CONFIG_FILE: lede-ax1800/.config
   DIY_P1_SH: lede-ax1800/diy-part1.sh
   DIY_P2_SH: lede-ax1800/diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -64,11 +64,13 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
-    - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
-
-    - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
+    - name: Update feeds & Install feeds
+      run: |
+        cp lede-ax1800/jdcloud-ax1800-pro.patch openwrt/jdcloud-ax1800-pro.patch
+        cd openwrt
+        git apply jdcloud-ax1800-pro.patch
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
         
     - name: Load custom configuration
       run: |
