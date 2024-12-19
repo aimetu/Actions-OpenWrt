@@ -9,7 +9,7 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 
-name: libwrt.612
+name: libwrt.6.12
 
 on:
   repository_dispatch:
@@ -17,7 +17,7 @@ on:
 
 env:
   REPO_URL: https://github.com/LiBwrt/openwrt-6.x.git
-  REPO_BRANCH: kernel-6.12
+  REPO_BRANCH: 24.10-6.12
   FEEDS_CONF: libwrt/6.12.conf.default
   CONFIG_FILE: libwrt/6.12.config
   DIY_P1_SH: libwrt/diy-part1.sh
