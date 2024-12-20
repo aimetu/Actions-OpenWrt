@@ -49,9 +49,9 @@ git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/l
 
 # 添加 mosdns 插件，删除重复 mosdns 文件
 rm -rf feeds/packages/net/mosdns
-rm -rf feeds/packages/net/v2ray-geodata
+# rm -rf feeds/packages/net/v2ray-geodata
 rm -rf feeds/luci/applications/luci-app-mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+# git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
 # 添加 smartdns 插件
