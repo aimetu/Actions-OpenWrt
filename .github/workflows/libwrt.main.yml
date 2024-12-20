@@ -121,7 +121,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: LiBwrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: LiBwrt_main_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
     - name: Generate release tag
