@@ -19,7 +19,7 @@ env:
   REPO_URL: https://github.com/LiBwrt/openwrt-6.x.git
   REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: libwrt/small.conf.default
-  CONFIG_FILE: libwrt/.config
+  CONFIG_FILE: libwrt/neko.config
   DIY_P1_SH: libwrt/diy-part1.sh
   DIY_P2_SH: libwrt/diy-part2.sh
   UPLOAD_BIN_DIR: false
