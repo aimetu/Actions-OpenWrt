@@ -61,7 +61,6 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
 # 添加 nekobox 插件
 # git clone https://github.com/Thaolga/openwrt-nekobox package/openwrt-nekobox
-# git clone https://github.com/Thaolga/luci-app-nekoclash  package/luci-app-nekoclash
 
 # 添加 mihomo 插件
 # git clone --depth=1 https://github.com/morytyann/OpenWrt-mihomo.git -b main package/luci-app-mihomo
