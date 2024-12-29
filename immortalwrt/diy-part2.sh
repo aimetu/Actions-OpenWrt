@@ -19,6 +19,10 @@ sed -i 's/192.168.1.1/10.10.10.1/g' package/base-files/files/bin/config_generate
 # 修改 wifi 无线名称
 sed -i "s/ImmortalWrt/OpenWrt/g" package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 
+# 修改 wifi 无线名称 & 密码
+sed -i "s/OWRT/OpenWrt/g" package/base-files/files/etc/uci-defaults/990_set-wireless.sh
+sed -i "s/12345678/password/g" package/base-files/files/etc/uci-defaults/990_set-wireless.sh
+
 # 最大连接数修改为65535
 # sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
 
