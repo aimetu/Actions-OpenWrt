@@ -24,7 +24,10 @@ sed -i "s/OWRT/OpenWrt/g" package/base-files/files/etc/uci-defaults/990_set-wire
 sed -i "s/12345678/password/g" package/base-files/files/etc/uci-defaults/990_set-wireless.sh
 
 # 最大连接数修改为65535
-# sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
+# sed -i "s/nf_conntrack_max=.*/nf_conntrack_max=65535/g" package/kernel/linux/files/sysctl-nf-conntrack.conf
+
+# 修改 luci 文件，添加 NSS Load 相关状态显示
+# sed -i "s#const fd = popen('top -n1 | awk \\\'/^CPU/ {printf(\"%d%\", 100 - \$8)}\\\'')#const fd = popen(access('/sbin/cpuusage') ? '/sbin/cpuusage' : \"top -n1 | awk \\'/^CPU/ {printf(\"%d%\", 100 - \$8)}\\'\")#g"
 
 # 修改 wifi 默认打开
 # sed -i "s/disabled='${defaults ? 0 : 1}'/disabled='0'/g" package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
