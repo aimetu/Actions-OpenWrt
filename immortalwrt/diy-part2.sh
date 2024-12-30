@@ -27,7 +27,7 @@ sed -i "s/12345678/password/g" package/base-files/files/etc/uci-defaults/990_set
 # sed -i "s/nf_conntrack_max=.*/nf_conntrack_max=65535/g" package/kernel/linux/files/sysctl-nf-conntrack.conf
 # sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
 
-# 修改 luci 文件，添加 NSS Load 相关状态显示
+# 修改指定 luci 文件，添加 NSS Load 相关状态显示
 # FILE="/usr/share/rpcd/ucode/luci"
 # sed -i "s#const fd = popen('top -n1 | awk \\\'/^CPU/ {printf(\"%d%\", 100 - \$8)}\\\'')#const fd = popen(access('/sbin/cpuusage') ? '/sbin/cpuusage' : \"top -n1 | awk \\'/^CPU/ {printf(\"%d%\", 100 - \$8)}\\'\")#g" $FILE
 
