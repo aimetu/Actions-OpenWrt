@@ -27,10 +27,6 @@ sed -i "s/12345678/password/g" package/base-files/files/etc/uci-defaults/990_set
 # sed -i "s/nf_conntrack_max=.*/nf_conntrack_max=65535/g" package/kernel/linux/files/sysctl-nf-conntrack.conf
 # sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
 
-# 修改指定 luci 文件，添加 NSS Load 相关状态显示
-# FILE="/usr/share/rpcd/ucode/luci"
-# sed -i "s#const fd = popen('top -n1 | awk \\\'/^CPU/ {printf(\"%d%\", 100 - \$8)}\\\'')#const fd = popen(access('/sbin/cpuusage') ? '/sbin/cpuusage' : \"top -n1 | awk \\'/^CPU/ {printf(\"%d%\", 100 - \$8)}\\'\")#g" $FILE
-
 # 修改 wifi 默认打开
 # sed -i "s/disabled='${defaults ? 0 : 1}'/disabled='0'/g" package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 
@@ -49,7 +45,7 @@ sed -i "s/12345678/password/g" package/base-files/files/etc/uci-defaults/990_set
 
 # 添加 AdguardHome 广告过滤插件，删除自带 AdguardHome 文件
 rm -rf feeds/packages/net/adguardhome
-git clone https://github.com/kongfl888/luci-app-adguardhome package/new/luci-app-adguardhome
+# git clone https://github.com/kongfl888/luci-app-adguardhome package/new/luci-app-adguardhome
 # git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/new/luci-app-adguardhome
 
 # 更新 golang 依赖（ mosdns & alist 插件 )
