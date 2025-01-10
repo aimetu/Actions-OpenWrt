@@ -49,7 +49,7 @@ sed -i "s/12345678/password/g" package/base-files/files/etc/uci-defaults/990_set
 
 # 添加 AdguardHome 广告过滤插件，删除自带 AdguardHome 文件
 rm -rf feeds/packages/net/adguardhome
-# git clone https://github.com/kongfl888/luci-app-adguardhome package/new/luci-app-adguardhome
+git clone https://github.com/kongfl888/luci-app-adguardhome package/new/luci-app-adguardhome
 # git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/new/luci-app-adguardhome
 
 # 更新 golang 依赖（ mosdns & alist 插件 )
