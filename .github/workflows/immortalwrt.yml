@@ -16,8 +16,8 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/laipeng668/immortalwrt.git
-  REPO_BRANCH: openwrt-24.10
+  REPO_URL: https://github.com/VIKINGYFY/immortalwrt.git
+  REPO_BRANCH: main
   FEEDS_CONF: immortalwrt/feeds.conf.default
   CONFIG_FILE: immortalwrt/.config
   DIY_P1_SH: immortalwrt/diy-part1.sh
